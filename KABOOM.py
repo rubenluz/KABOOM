@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 #
 # KABOOM
-# Utility script to construct phylogenies using BUSCO.
+# Utility script to construct phylogenies using BUSCO genes.
 #
 # 2023 Rúben Luz
-# https://github.com/rubenluz/prokBUSCOphylogenomics.git
+# https://github.com/rubenluz/KABOOM.git
 #
 
 import argparse

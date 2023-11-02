@@ -1,0 +1,17 @@
+# SUGGESTION:
+# INSTALL MINICONDA (DOWNLOAD THE LATEST MIRROR AND INSTALL "bash ./Miniconda3-latest-Linux-x86_64.sh"
+# INSTALL A FASTER RESOLVER like mamba "conda install mamba"
+# SET THE ENVIRONMENT "mamba env create -f conda_env.yaml" THIS IS HIGHLY RECOMMENDED AS BUSCO REQUIRES A LOWER VERSION OF PYTHON TO WORK.
+# TO ACTIVATE JUST RUN IN COMMAND LINE "mamba activate KABOOM_env"
+#
+# DEPENDENCIES VERSIONS ARE CHOSEN FOR STABILITY PURPOSE. YOU CAN FREELY UPDATE ANY OF THEM IF YOU CHOOSE TO, BE AWARE THAT the PIPLINE MIGHT FAIL.
+name: KABOOM_env
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - BUSCO=5.5.0
+  - muscle=5.1
+  - mafft=7.520
+  - trimal=1.4.1
+  - iqtree=2.2.3

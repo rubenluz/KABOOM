@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# KABOOM
+# KABOOM (proKAryote BUSCO phylogenOMics)
 # Utility script to construct phylogenies using BUSCO genes.
 #
 # 2023 Rúben Luz

@@ -513,7 +513,7 @@ def main():
         run_iqtree(iqtree_input_file, "aminoacids_tree", str(ufbootstrap), str(jackknife))
 
     print_message()
-    print_message("prokBUSCOphylogenomics finished")
+    print_message("KABOOM finished")
 
 
 def run_busco(busco_input_directory, lineage, busco_working_directory, threads, busco_extra_parameters):

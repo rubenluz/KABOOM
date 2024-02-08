@@ -10,7 +10,7 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
-  - BUSCO=5.5.0
+  - BUSCO=5.6.1
   - muscle=5.1
   - mafft=7.520
   - trimal=1.4.1

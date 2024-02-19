@@ -14,4 +14,4 @@ dependencies:
   - muscle=5.1
   - mafft=7.520
   - trimal=1.4.1
-  - iqtree=2.2.3
+  - iqtree=2.2.6

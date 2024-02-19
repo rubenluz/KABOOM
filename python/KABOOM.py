@@ -162,7 +162,7 @@ def main():
     busco_samples = []
     busco_sample_names = []
 
-    for i in listdir("."):
+    for i in listdir(".."):
         i = abspath(i)
 
         if isdir(i):
@@ -200,7 +200,7 @@ def main():
 
             chdir(join(busco_sample, "busco_sequences", "single_copy_busco_sequences"))
 
-            for f in listdir("."):
+            for f in listdir(".."):
                 if f.endswith(".fna"):
                     busco_name = f.rstrip(".fna")
                     all_nucleotide_buscos.add(busco_name)
@@ -226,7 +226,7 @@ def main():
 
             chdir(join(busco_sample, "busco_sequences", "single_copy_busco_sequences"))
 
-            for f in listdir("."):
+            for f in listdir(".."):
                 if f.endswith(".faa"):
                     busco_name = f.rstrip(".faa")
                     all_aminoacids_buscos.add(busco_name)
@@ -380,7 +380,7 @@ def main():
 
         # If psc == 100; we can just concatenate alignments (no missing data)
         if args.psc == 100:
-            for alignment in listdir("."):
+            for alignment in listdir(".."):
                 if alignment.endswith(".trimmed.aln"):
                     for record in SeqIO.parse(alignment, "fasta"):
                         nucleotide_alignments[str(record.id)] += str(record.seq)
@@ -389,7 +389,7 @@ def main():
                     start += len(record.seq)
         else:
             # we need to handle missing data here
-            for alignment in listdir("."):
+            for alignment in listdir(".."):
                 if alignment.endswith(".trimmed.aln"):
                     check_samples = busco_sample_names[:]
 
@@ -455,7 +455,7 @@ def main():
 
         # If psc == 100; we can just concatenate alignments (no missing data)
         if args.psc == 100:
-            for alignment in listdir("."):
+            for alignment in listdir(".."):
                 if alignment.endswith(".trimmed.aln"):
                     for record in SeqIO.parse(alignment, "fasta"):
                         aminoacids_alignments[str(record.id)] += str(record.seq)
@@ -464,7 +464,7 @@ def main():
                     start += len(record.seq)
         else:
             # we need to handle missing data here
-            for alignment in listdir("."):
+            for alignment in listdir(".."):
                 if alignment.endswith(".trimmed.aln"):
                     check_samples = busco_sample_names[:]
 

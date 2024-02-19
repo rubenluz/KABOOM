@@ -1,0 +1,32 @@
+Bootstrap: docker
+From: ubuntu:latest
+
+%post
+    # Install Miniconda
+    apt-get update && apt-get install -y wget
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda
+    rm Miniconda3-latest-Linux-x86_64.sh
+    export PATH="/opt/conda/bin:$PATH"
+    echo 'export PATH="/opt/conda/bin:$PATH"' >> /etc/bash.bashrc
+        
+    /opt/conda/bin/conda config --add channels defaults
+    /opt/conda/bin/conda config --add channels bioconda
+    /opt/conda/bin/conda config --add channels conda-forge
+    /opt/conda/bin/conda config --set channel_priority flexible
+
+    # Install mamba (an alternative to conda for faster dependency resolution)
+    /opt/conda/bin/conda install conda-forge::mamba
+
+    # Initialize mamba
+    /opt/conda/bin/mamba init
+
+    # Create Conda environment and install packages
+    /opt/conda/bin/mamba create -n kaboom_env busco=5.6.1 muscle=5.1 mafft=7.520 trimal=1.4.1 iqtree=2.2.6
+
+%environment
+    PATH=/opt/conda/envs/kaboom_env/bin:$PATH
+
+
+   # To build use apptainer:
+   # sudo apptainer build kaboom_container.sif kaboom.def
